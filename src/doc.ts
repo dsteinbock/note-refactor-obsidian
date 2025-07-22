@@ -32,7 +32,7 @@ export default class NRDoc {
         const currentNoteLink = await this.markdownLink(currentNote.path);
         let contentToInsert = transclude + link;
         
-        contentToInsert = this.templatedContent(contentToInsert, this.settings.noteLinkTemplate, currentNote.basename, currentNoteLink, fileName, link, '', content);
+        contentToInsert = this.templatedContent(contentToInsert, this.settings.noteLinkTemplate, currentNote.basename, currentNoteLink, fileName, link, '', content, originalContent);
 
         if(mode === 'split'){ 
             this.removeNoteRemainder(doc, contentToInsert);
